@@ -1,13 +1,13 @@
 import java.awt.Color;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Set;
 
 public class MapDemo {
+
     public static void main(String[] args) {
 
-        // Create a Map that associates a person's name (String)
-        // with their favorite color (Color)
+        // Create a Map that associates a person's name
+        // with their favorite color
         Map<String, Color> favoriteColors = new HashMap<>();
 
         // Add key-value pairs to the map
@@ -16,17 +16,27 @@ public class MapDemo {
         favoriteColors.put("Adam", Color.RED);
         favoriteColors.put("Eve", Color.BLUE);
 
-        // Get the set of all keys (names) in the map
-        Set<String> keySet = favoriteColors.keySet();
+        // Iterate over the map using entrySet()
+        for (Map.Entry<String, Color> entry : favoriteColors.entrySet()) {
 
-        // Iterate over each key in the set
-        for (String key : keySet) {
+            String name = entry.getKey();
+            Color color = entry.getValue();
 
-            // Retrieve the value (color) associated with the current key
-            Color value = favoriteColors.get(key);
-
-            // Print the name and the corresponding favorite color
-            System.out.println(key + ": " + value);
+            // Print the name and the favorite color
+            System.out.println(name + "'s favorite color is " + colorToString(color));
         }
+    }
+
+    /**
+     * Converts a Color object to a readable color name.
+     *
+     * @param color the Color to convert
+     * @return a String representing the color name
+     */
+    private static String colorToString(Color color) {
+        if (color.equals(Color.BLUE)) return "Blue";
+        if (color.equals(Color.RED)) return "Red";
+        if (color.equals(Color.GREEN)) return "Green";
+        return "Unknown Color";
     }
 }
