@@ -1,46 +1,86 @@
-# Favorite Colors Map Demo 🎨
-This Java program demonstrates how to use a Map (specifically a HashMap) to store and retrieve key–value pairs.
-Each person’s name is associated with their favorite color, and the program prints all entries in the map.
-This example is ideal for beginners learning how maps work in Java.
+# MapDemo 🎨
 
-## 📌 Features
-- Uses a HashMap to store key–value pairs
-- Associates names (String) with colors (Color)
-- Retrieves keys using keySet()
-- Accesses values using get()
-- Iterates through the map and prints all entries
+A simple and beginner-friendly Java program that demonstrates how to use a **Map** to associate keys with values.
 
-## 🛠 How It Works
-The program uses the following Java components:
-- Map / HashMap to store name–color pairs
-- Color class from java.awt to represent colors
-- keySet() to obtain all keys in the map
-- for-each loop to iterate over the keys
-- get(key) to retrieve the value associated with each key
+In this example, a person's name is associated with their favorite color using a `HashMap`.
 
-## Step-by-step behavior:
-1) A HashMap is created to store favorite colors.
-2) Several name–color pairs are added using put().
-3) All keys (names) are retrieved using keySet().
-4) The program loops through each key.
-5) For each key, the corresponding color is retrieved and printed.
+---
+
+## 📂 Project Structure
+```
+MapDemo/
+│
+├── MapDemo.java
+└── README.md
+```
+
+---
+
+## ✨ Features
+
+- Uses a `HashMap` to store key-value pairs
+- Associates a `String` (name) with a `Color`
+- Iterates through the map using `entrySet()`
+- Converts `Color` objects into readable color names
+- Clean, readable, and beginner-friendly code
+
+---
+
+## 🧠 Concept Overview
+
+A **Map** in Java stores data as **key-value pairs**.
+
+In this project:
+- **Key** → Person's name (`String`)
+- **Value** → Favorite color (`Color`)
+
+Each key is unique, and each key maps to exactly one value.
+
+---
+
+## 🧩 How the Program Works
+
+1. A `HashMap<String, Color>` is created.
+2. Names and favorite colors are added using `put()`.
+3. The map is traversed using `entrySet()`.
+4. For each entry:
+   - The key (name) is retrieved
+   - The value (color) is retrieved
+   - The color is converted into a readable string
+5. The result is printed to the console.
+
+---
 
 ## ▶ Example Output
-- Juliet: java.awt.Color[r=0,g=0,b=255]
-- Romeo: java.awt.Color[r=0,g=255,b=0]
-- Adam: java.awt.Color[r=255,g=0,b=0]
-- Eve: java.awt.Color[r=0,g=0,b=255]
+```
+Juliet's favorite color is Blue
+Romeo's favorite color is Green
+Adam's favorite color is Red
+Eve's favorite color is Blue
+```
 
-## 🎯 Learning Purpose
-This project is intended for learning purposes, especially for beginners practicing:
-- Map and HashMap usage
-- Key–value data structures
-- Iterating over collections
-- Using keySet() and get()
-- Understanding how maps differ from lists
+---
 
-## ✅ Notes
-- HashMap does **not guarantee ordering** of elements.
-- If you need ordered results, consider:
-  - LinkedHashMap → preserves insertion order
-  - TreeMap → sorts keys in natural order
+## 🎯 Learning Goals
+
+This project is designed for beginners who want to practice:
+
+- Using `Map` and `HashMap`
+- Working with key-value data structures
+- Iterating with `entrySet()`
+- Using Java built-in classes (`Color`)
+- Writing clean and readable Java code
+
+---
+
+## 🚀 How to Run
+
+1. Make sure you have **Java 8 or higher** installed.
+2. Compile the program:
+```
+javac MapDemo.java
+```
+3. Run the program:
+```
+java MapDemo
+```
